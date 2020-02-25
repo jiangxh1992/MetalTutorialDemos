@@ -29,11 +29,20 @@ vertex ColorInOut vertexShader(constant Vertex *vertexArr [[buffer(0)]],
 
     float4 position = vector_float4(vertexArr[vid].pos, 0 , 1.0);
     out.position = position;
+    out.texCoord = vertexArr[vid].uv;
 
     return out;
 }
 
-fragment float4 fragmentShader(ColorInOut in [[stage_in]])
+fragment half4 fragmentShader(ColorInOut in [[stage_in]],
+                               texture2d<half> mtltexture01 [[texture(0)]])
 {
-    return float4(1.0,0,0,0);
+    // 纹理采样对象
+    constexpr sampler textureSampler (mag_filter::linear,
+    min_filter::linear);
+    
+    // 采样贴图
+    const half4 color = mtltexture01.sample(textureSampler, in.texCoord);
+    
+    return color;
 }

@@ -48,6 +48,7 @@ typedef struct
 typedef struct
 {
     vector_float2 pos;
+    vector_float2 uv;
 } Vertex;
 
 #endif /* ShaderTypes_h */

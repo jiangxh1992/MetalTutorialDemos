@@ -19,6 +19,8 @@
     id <MTLDepthStencilState> _depthState;
     
     id<MTLBuffer> vertexBuffer;
+    
+    id<MTLTexture> mtltexture01;
 }
 
 -(nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)view;
@@ -72,11 +74,30 @@
 {
     // 顶点buffer
     static const Vertex vert[] = {
-        {{0,1.0}},
-        {{1.0,-1.0}},
-        {{-1.0,-1.0}}
+        {{0,1.0},     {0.5,0}},
+        {{1.0,-1.0},  {1.0,1.0}},
+        {{-1.0,-1.0}, {0,1.0}}
     };
     vertexBuffer = [_device newBufferWithBytes:vert length:sizeof(vert) options:MTLResourceStorageModeShared];
+    
+    // 加载贴图
+    NSError *error;
+    MTKTextureLoader* textureLoader = [[MTKTextureLoader alloc] initWithDevice:_device];
+    NSDictionary *textureLoaderOptions =
+    @{
+      MTKTextureLoaderOptionTextureUsage       : @(MTLTextureUsageShaderRead),
+      MTKTextureLoaderOptionTextureStorageMode : @(MTLStorageModePrivate)
+      };
+    mtltexture01 = [textureLoader newTextureWithName:@"texture01"
+                                         scaleFactor:1.0
+                                              bundle:nil
+                                             options:textureLoaderOptions
+                                               error:&error];
+    if(!mtltexture01 || error)
+    {
+        NSLog(@"Error creating texture %@", error.localizedDescription);
+    }
+
 }
 
 - (void)drawInMTKView:(nonnull MTKView *)view
@@ -96,6 +117,7 @@
         [renderEncoder setRenderPipelineState:_pipelineState];
         [renderEncoder setDepthStencilState:_depthState];
         [renderEncoder setVertexBuffer:vertexBuffer offset:0 atIndex:0];
+        [renderEncoder setFragmentTexture:mtltexture01 atIndex:0]; // 设置纹理贴图
         [renderEncoder drawPrimitives:MTLPrimitiveTypeTriangle vertexStart:0 vertexCount:3];
         [renderEncoder popDebugGroup];
 
