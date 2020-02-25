@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D22870CD23FEAD56005297F2 /* Triangle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triangle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D22870CD23FEAD56005297F2 /* MetalTutorialProjPhase1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalTutorialProjPhase1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D22870D023FEAD56005297F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D22870D123FEAD56005297F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D22870D623FEAD56005297F2 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		D22870C423FEAD56005297F2 = {
 			isa = PBXGroup;
 			children = (
-				D22870CF23FEAD56005297F2 /* Triangle */,
+				D22870CF23FEAD56005297F2 /* MetalTutorialProjPhase1 */,
 				D22870CE23FEAD56005297F2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,12 +56,12 @@
 		D22870CE23FEAD56005297F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D22870CD23FEAD56005297F2 /* Triangle.app */,
+				D22870CD23FEAD56005297F2 /* MetalTutorialProjPhase1.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D22870CF23FEAD56005297F2 /* Triangle */ = {
+		D22870CF23FEAD56005297F2 /* MetalTutorialProjPhase1 */ = {
 			isa = PBXGroup;
 			children = (
 				D22870D023FEAD56005297F2 /* AppDelegate.h */,
@@ -78,15 +78,15 @@
 				D22870E423FEAD59005297F2 /* Info.plist */,
 				D22870E523FEAD59005297F2 /* main.m */,
 			);
-			path = Triangle;
+			path = MetalTutorialProjPhase1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D22870CC23FEAD56005297F2 /* Triangle */ = {
+		D22870CC23FEAD56005297F2 /* MetalTutorialProjPhase1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D22870E923FEAD59005297F2 /* Build configuration list for PBXNativeTarget "Triangle" */;
+			buildConfigurationList = D22870E923FEAD59005297F2 /* Build configuration list for PBXNativeTarget "MetalTutorialProjPhase1" */;
 			buildPhases = (
 				D22870C923FEAD56005297F2 /* Sources */,
 				D22870CA23FEAD56005297F2 /* Frameworks */,
@@ -96,9 +96,9 @@
 			);
 			dependencies = (
 			);
-			name = Triangle;
+			name = MetalTutorialProjPhase1;
 			productName = Triangle;
-			productReference = D22870CD23FEAD56005297F2 /* Triangle.app */;
+			productReference = D22870CD23FEAD56005297F2 /* MetalTutorialProjPhase1.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -115,7 +115,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D22870C823FEAD56005297F2 /* Build configuration list for PBXProject "Triangle" */;
+			buildConfigurationList = D22870C823FEAD56005297F2 /* Build configuration list for PBXProject "MetalTutorialProjPhase1" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -128,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D22870CC23FEAD56005297F2 /* Triangle */,
+				D22870CC23FEAD56005297F2 /* MetalTutorialProjPhase1 */,
 			);
 		};
 /* End PBXProject section */
@@ -297,13 +297,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V4SYMZQA29;
-				INFOPLIST_FILE = Triangle/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MetalTutorialProjPhase1/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jxh.Triangle;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = jxh.MetalTutorialProjPhase1;
+				PRODUCT_NAME = MetalTutorialProjPhase1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -314,13 +315,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V4SYMZQA29;
-				INFOPLIST_FILE = Triangle/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MetalTutorialProjPhase1/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jxh.Triangle;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = jxh.MetalTutorialProjPhase1;
+				PRODUCT_NAME = MetalTutorialProjPhase1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -328,7 +330,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D22870C823FEAD56005297F2 /* Build configuration list for PBXProject "Triangle" */ = {
+		D22870C823FEAD56005297F2 /* Build configuration list for PBXProject "MetalTutorialProjPhase1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D22870E723FEAD59005297F2 /* Debug */,
@@ -337,7 +339,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D22870E923FEAD59005297F2 /* Build configuration list for PBXNativeTarget "Triangle" */ = {
+		D22870E923FEAD59005297F2 /* Build configuration list for PBXNativeTarget "MetalTutorialProjPhase1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D22870EA23FEAD59005297F2 /* Debug */,

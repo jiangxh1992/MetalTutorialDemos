@@ -1,6 +1,5 @@
 //
 //  Renderer.h
-//  MetalGameDemo
 //
 //  Created by Xinhou Jiang on 2020/2/9.
 //  Copyright © 2020 Xinhou Jiang. All rights reserved.

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D22870CC23FEAD56005297F2"
-               BuildableName = "Triangle.app"
-               BlueprintName = "Triangle"
-               ReferencedContainer = "container:Triangle.xcodeproj">
+               BuildableName = "MetalTutorialProjPhase1.app"
+               BlueprintName = "MetalTutorialProjPhase1"
+               ReferencedContainer = "container:MetalTutorialProjPhase1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D22870CC23FEAD56005297F2"
-            BuildableName = "Triangle.app"
-            BlueprintName = "Triangle"
-            ReferencedContainer = "container:Triangle.xcodeproj">
+            BuildableName = "MetalTutorialProjPhase1.app"
+            BlueprintName = "MetalTutorialProjPhase1"
+            ReferencedContainer = "container:MetalTutorialProjPhase1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D22870CC23FEAD56005297F2"
-            BuildableName = "Triangle.app"
-            BlueprintName = "Triangle"
-            ReferencedContainer = "container:Triangle.xcodeproj">
+            BuildableName = "MetalTutorialProjPhase1.app"
+            BlueprintName = "MetalTutorialProjPhase1"
+            ReferencedContainer = "container:MetalTutorialProjPhase1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
