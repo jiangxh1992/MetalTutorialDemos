@@ -21,6 +21,8 @@
     id<MTLBuffer> vertexBuffer;
     
     id<MTLTexture> mtltexture01;
+    
+    MTLVertexDescriptor *vertexDescriptor;
 }
 
 -(nonnull instancetype)initWithMetalKitView:(nonnull MTKView *)view;
@@ -42,6 +44,20 @@
     view.sampleCount = 1;
 
     id<MTLLibrary> defaultLibrary = [_device newDefaultLibrary];
+    
+    vertexDescriptor = [[MTLVertexDescriptor alloc] init];
+    // pos
+    vertexDescriptor.attributes[0].format = MTLVertexFormatFloat2;
+    vertexDescriptor.attributes[0].offset = 0;
+    vertexDescriptor.attributes[0].bufferIndex = 0;
+    // uv
+    vertexDescriptor.attributes[1].format = MTLVertexFormatFloat2;
+    vertexDescriptor.attributes[1].offset = 8;
+    vertexDescriptor.attributes[1].bufferIndex = 0;
+    // layout
+    vertexDescriptor.layouts[0].stride = 16;
+    vertexDescriptor.layouts[0].stepRate = 1;
+    vertexDescriptor.layouts[0].stepFunction = MTLVertexStepFunctionPerVertex;
 
     id <MTLFunction> vertexFunction = [defaultLibrary newFunctionWithName:@"vertexShader"];
     id <MTLFunction> fragmentFunction = [defaultLibrary newFunctionWithName:@"fragmentShader"];
@@ -49,6 +65,7 @@
     MTLRenderPipelineDescriptor *pipelineStateDescriptor = [[MTLRenderPipelineDescriptor alloc] init];
     pipelineStateDescriptor.label = @"MyPipeline";
     pipelineStateDescriptor.sampleCount = view.sampleCount;
+    pipelineStateDescriptor.vertexDescriptor = vertexDescriptor;
     pipelineStateDescriptor.vertexFunction = vertexFunction;
     pipelineStateDescriptor.fragmentFunction = fragmentFunction;
     pipelineStateDescriptor.colorAttachments[0].pixelFormat = view.colorPixelFormat;
@@ -97,7 +114,6 @@
     {
         NSLog(@"Error creating texture %@", error.localizedDescription);
     }
-
 }
 
 - (void)drawInMTKView:(nonnull MTKView *)view

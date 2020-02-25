@@ -22,14 +22,20 @@ typedef struct
     float2 texCoord;
 } ColorInOut;
 
-vertex ColorInOut vertexShader(constant Vertex *vertexArr [[buffer(0)]],
-                               uint vid [[vertex_id]])
+typedef struct
+{
+    float2 pos[[attribute(0)]];
+    float2 uv[[attribute(1)]];
+} VertexAttr;
+
+
+vertex ColorInOut vertexShader(VertexAttr in [[stage_in]])
 {
     ColorInOut out;
 
-    float4 position = vector_float4(vertexArr[vid].pos, 0 , 1.0);
+    float4 position = vector_float4(in.pos, 0 , 1.0);
     out.position = position;
-    out.texCoord = vertexArr[vid].uv;
+    out.texCoord = in.uv;
 
     return out;
 }
