@@ -37,10 +37,9 @@
 
     // 初始化渲染器，设置渲染器的渲染对象为_view
     _renderer = [[Renderer alloc] initWithMetalKitView:_view];
-
     // _view尺寸变化事件，传递给render渲染器
     [_renderer mtkView:_view drawableSizeWillChange:_view.bounds.size];
-
+    // 设置MTKView的delegate为_render，在_render中处理drawableSizeWillChange回调事件
     _view.delegate = _renderer;
 }
 

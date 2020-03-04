@@ -105,8 +105,6 @@
     id <MTLCommandBuffer> commandBuffer = [_commandQueue commandBuffer];
     commandBuffer.label = @"MyCommand";
     MTLRenderPassDescriptor* renderPassDescriptor = view.currentRenderPassDescriptor;
-    renderPassDescriptor.tileWidth = 16;
-    renderPassDescriptor.tileHeight = 16;
     if(renderPassDescriptor != nil)
     {
         id <MTLRenderCommandEncoder> renderEncoder =

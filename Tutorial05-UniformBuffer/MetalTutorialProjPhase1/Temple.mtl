@@ -1,0 +1,32 @@
+
+newmtl structure
+Ns 10.0000
+Ni 1.5000
+d 1.0000
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 2
+Ka 0.5880 0.5880 0.5880
+Kd 0.5880 0.5880 0.5880
+Ks 0.0000 0.0000 0.0000
+Ke 0.0000 0.0000 0.0000
+map_Ka StructureBaseColorMap
+map_Kd StructureBaseColorMap
+map_Ks StructureSpecularMap
+map_bump StructureNormalMap
+
+newmtl tree
+Ns 10.0000
+Ni 1.5000
+d 1.0000
+Tr 0.0000
+Tf 1.0000 1.0000 1.0000
+illum 2
+Ka 0.3608 0.3608 0.3608
+Kd 0.3608 0.3608 0.3608
+Ks 0.0000 0.0000 0.0000
+Ke 0.0000 0.0000 0.0000
+map_Ka FoliageBaseColorMap
+map_Kd FoliageBaseColorMap
+map_Ks FoliageSpecularMap
+map_bump FoliageNormalMap
