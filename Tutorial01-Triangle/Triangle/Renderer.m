@@ -16,7 +16,6 @@
     id <MTLCommandQueue> _commandQueue;
 
     id <MTLRenderPipelineState> _pipelineState;
-    id <MTLRenderPipelineState> _myResolvePipelineState;
     id <MTLDepthStencilState> _depthState;
     
     id<MTLBuffer> vertexBuffer;
@@ -91,7 +90,7 @@
         [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
         renderEncoder.label = @"MyRenderEncoder";
 
-        [renderEncoder pushDebugGroup:@"DrawBox"];
+        [renderEncoder pushDebugGroup:@"DrawTriangle"];
         [renderEncoder setRenderPipelineState:_pipelineState];
         [renderEncoder setDepthStencilState:_depthState];
         [renderEncoder setVertexBuffer:vertexBuffer offset:0 atIndex:0];

@@ -59,6 +59,7 @@ Implementation of renderer class that perfoms Metal setup and per-frame renderin
     const MTLResourceOptions storageMode = MTLResourceStorageModeShared;
     _uniformBuffer = [_device newBufferWithLength:sizeof(Uniforms)
                                                   options:storageMode];
+    
     _defaultVertexDescriptor = [[MTLVertexDescriptor alloc] init];
 
     // Positions.
@@ -136,7 +137,7 @@ Implementation of renderer class that perfoms Metal setup and per-frame renderin
 {
     Uniforms * uniforms = (Uniforms*)_uniformBuffer.contents;
     uniforms->projectionMatrix = _projectionMatrix;
-    matrix_float4x4 viewMatrix = matrix_multiply(matrix4x4_translation(0.0, 0, 1000.5),
+    matrix_float4x4 viewMatrix = matrix_multiply(matrix4x4_translation(0.0, 0, 1000),
                                            matrix_multiply(matrix4x4_rotation(-0.5, (vector_float3){1,0,0}),
                                                            matrix4x4_rotation(_rotation, (vector_float3){0,1,0} )));
     vector_float3 rotationAxis = {0, 1, 0};
