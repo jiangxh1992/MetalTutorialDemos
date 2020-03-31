@@ -46,7 +46,8 @@ typedef struct
     matrix_float4x4 modelMatrix;
     matrix_float4x4 viewMatrix;
     
-    float Kd; // 漫反射光强度
+    float IL; // 光源强度
+    float Kd; // 漫反射系数
         
     vector_float3 directionalLightDirection;
     vector_float3 directionalLightColor;

@@ -49,10 +49,12 @@ typedef struct
     vector_float3 directionalLightDirection;
     vector_float3 directionalLightColor;
     
-    float Kd; // 漫反射光强度
-    float Ks; // 镜面反射强度
-    float Ka; // 环境光强度
-    float shininess; // 镜面反射高光系数
+    float IL; // 平行光源强度
+    float Kd; // 漫反射光系数
+    float Ks; // 镜面反射系数
+    float Ia; // 环境光强度
+    float Ka; // 环境光系数
+    float shininess; // 镜面反射高光指数
     
     vector_float3 cameraPos;
 } Uniforms;

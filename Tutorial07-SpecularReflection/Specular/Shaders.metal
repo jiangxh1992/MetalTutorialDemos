@@ -15,6 +15,7 @@ typedef struct
 typedef struct
 {
     float4 position [[position]];
+    float4 worldPos;
     float2 texCoord;
     float4 normal;
 } ColorInOut;
@@ -25,6 +26,7 @@ vertex ColorInOut vertexShader(Vertex in [[ stage_in ]],
     ColorInOut out;
     float4 position = float4(in.position, 1.0);
     out.position = uniforms.projectionMatrix * uniforms.modelViewMatrix * position;
+    out.worldPos = uniforms.modelMatrix * position;
     out.texCoord = in.texCoord;
     out.normal = normalize(uniforms.modelMatrix * float4((float3)in.normal,0));
     return out;
@@ -43,17 +45,17 @@ fragment half4 fragmentShader(ColorInOut in [[ stage_in ]],
     // 入射光方向
     float3 L = - normalize(uniforms.directionalLightDirection);
     // 视线方向
-    float3 V = normalize(uniforms.cameraPos - in.position.xyz);
+    float3 V = normalize(uniforms.cameraPos - in.worldPos.xyz);
     // 反射光方向
     float3 R = normalize(2 * fmax(dot(N, L), 0) * N - L);
     
     // Lambert diffuse
-    float diffuse = uniforms.Kd * max(dot(float3(in.normal.xyz),L),0.0);
+    float diffuse = uniforms.IL * uniforms.Kd * max(dot(float3(in.normal.xyz),L),0.0);
     
-    // Phong Model Specular
-    float specular = uniforms.Ks * pow(fmax(dot(V, R), 0), uniforms.shininess);
+    // Specular
+    float specular = uniforms.IL * uniforms.Ks * pow(fmax(dot(V, R), 0), uniforms.shininess);
     
-    
+    // Phong Model
     float3 out = float3(uniforms.directionalLightColor) * float3(color_sample.xyz) * (diffuse + specular);
     
     return half4(half3(out.xyz),1.0f);

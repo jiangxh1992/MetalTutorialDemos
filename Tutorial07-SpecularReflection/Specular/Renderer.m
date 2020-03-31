@@ -155,11 +155,12 @@ Implementation of renderer class that perfoms Metal setup and per-frame renderin
     uniforms->directionalLightDirection = (vector_float3){-1.0,-1.0,-1.0};
     uniforms->directionalLightColor = (vector_float3){0.8,0.8,0.8};
     
-    uniforms->Kd = 1.0f;
-    uniforms->Ks = 10.0f;
-    uniforms->shininess = 1.5f;
+    uniforms->IL = 10.0f;
+    uniforms->Kd = 0.1f;
+    uniforms->Ks = 0.9f;
+    uniforms->shininess = 15.0f;
     
-    uniforms->cameraPos = (vector_float3){0,-100,1100};
+    uniforms->cameraPos = (vector_float3){0,100,-1100};
 
     _rotation += 0.002f;
 }

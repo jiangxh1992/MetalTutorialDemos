@@ -38,10 +38,13 @@ fragment half4 fragmentShader(ColorInOut in [[ stage_in ]],
     
     half4 color_sample  = baseColorMap.sample(linearSampler,in.texCoord.xy);
 
-    // Lambert diffuse
-    float diffuse = uniforms.Kd * max(dot(float3(in.normal.xyz),normalize(-uniforms.directionalLightDirection)),0.0);
+    float3 N = float3(in.normal.xyz);
+    float3 L = normalize(-uniforms.directionalLightDirection);
     
-    float3 out = float3(uniforms.directionalLightColor)*float3(color_sample.xyz)*diffuse;
+    // Lambert diffuse
+    float diffuse = uniforms.IL * uniforms.Kd * max(dot(N,L),0.0);
+    
+    float3 out = float3(uniforms.directionalLightColor) * float3(color_sample.xyz) * diffuse;
     
     return half4(half3(out.xyz),1.0f);
 }
