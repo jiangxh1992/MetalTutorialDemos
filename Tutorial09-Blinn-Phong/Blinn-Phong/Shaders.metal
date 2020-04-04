@@ -47,13 +47,15 @@ fragment half4 fragmentShader(ColorInOut in [[ stage_in ]],
     // 视线方向
     float3 V = normalize(uniforms.cameraPos - in.worldPos.xyz);
     // 反射光方向
-    float3 R = normalize(2 * fmax(dot(N, L), 0) * N - L);
+    //float3 R = normalize(2 * fmax(dot(N, L), 0) * N - L);
+    // 半角向量
+    float3 H = normalize(L + V);
     
     // Lambert diffuse
     float diffuse = uniforms.IL * uniforms.Kd * max(dot(float3(in.normal.xyz),L),0.0);
     
-    // Specular
-    float specular = uniforms.IL * uniforms.Ks * pow(fmax(dot(V, R), 0), uniforms.shininess);
+    // Specular(Blinn-Phong)
+    float specular = uniforms.IL * uniforms.Ks * pow(fmax(dot(N, H), 0), uniforms.shininess);
     
     // Ambient Glow
     float ambient = uniforms.Ia * uniforms.Ka;

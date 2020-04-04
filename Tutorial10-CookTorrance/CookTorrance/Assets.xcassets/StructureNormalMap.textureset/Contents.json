@@ -1,0 +1,21 @@
+{
+  "properties" : {
+    "interpretation" : "data"
+  },
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  },
+  "textures" : [
+    {
+      "idiom" : "mac",
+      "filename" : "Mac.mipmapset",
+      "pixel-format" : "rg-8-unorm"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "Universal.mipmapset",
+      "pixel-format" : "rgba-8-unorm"
+    }
+  ]
+}
